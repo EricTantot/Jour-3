@@ -9,8 +9,9 @@ x = 0
 
 plus = 100
 moins = 0
+z = 0
 
-def ask(moins, plus, tested):
+def ask(moins: int, plus, tested) -> int:
     x = 0
     while x < 1:
         out = random.randint(moins,plus)
@@ -21,17 +22,15 @@ def ask(moins, plus, tested):
     return out
 
     
-z = 0
 
 def check_plus(plus, essai, z):
     if essai > plus:
         z = 1
-        return(z) 
+        return z 
     elif essai == (plus - 1):
         z = 1
-        return(z)    
-    else: 
-        return(z)
+        return z    
+    return(z)
 
 def check_moins(moins, essai, z):
     if essai < moins:
@@ -43,7 +42,6 @@ def check_moins(moins, essai, z):
     else:
         z = z + 0
         return(z)
-    
 
 while result != "G":
     test = ask(moins,plus, result)
@@ -73,3 +71,4 @@ while result != "G":
     else: 
         print("Veuillez fournir une entrée valide.")
         break
+
