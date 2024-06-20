@@ -1,7 +1,7 @@
 import random
 
 print("Mémorisez un nombre entre 1 et 100, je vais essayer de le retrouver...")
-a = input("Appuyer sur entrer quand vous êtes prêt et ne trichez pas ensuite.")
+input("Appuyer sur entrer quand vous êtes prêt et ne trichez pas ensuite.")
 
 result = []
 
