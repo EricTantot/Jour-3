@@ -34,5 +34,3 @@ def rec(a,b,c):
 
 print(check(a,b,c))
 print(f"{'Votre triangle est rectangle.' if rec(a,b,c) else ''}")
-
-
