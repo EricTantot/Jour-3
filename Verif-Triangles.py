@@ -1,36 +1,35 @@
 import math
 
-a = int(input("Entrer la longueur du côté A: "))
-b = int(input("Entrer la longueur du côté B: "))
-c = int(input("Entrer la longueur du côté C: "))
+def get_triangle_sides():
+    sides = []
+    while len(sides) < 3:
+        side = int(input(f"Enter side {len(sides) + 1}: "))
+        if side <= 0:
+            print("Invalid input. Please enter a positive number.")
+        else:
+            sides.append(side)
+    return sorted(sides)
 
-if a + b > c:
-    pass
-else:
-    print("Votre triangle ne peut pas être construit.")
-
-if a + c > b:
-    pass
-else:
-    print("Votre triangle ne peut pas être construit.")
-
-if b + c > a:
-    pass
-else: 
-    print("Votre triangle ne peut pas être construit.")
-
-def check(a,b,c):
+def check_triangle(sides):
+    a, b, c = sides
+    if a + b <= c:
+        print("Your triangle cannot be constructed.")
+        return
     if a == b == c:
-        return"Votre triangle est équilatéral."
+        return "Your triangle is equilateral."
     elif a == b or b == c or a == c:
-        return"Votre triangle est isocèle."
+        return "Your triangle is isosceles."
     else:
-        return"Votre triangle est quelquonque."
-    
-def rec(a,b,c):
-    sides = sorted([a,b,c])
-    x = math.isclose(sides[0]**2 + sides[1]**2, sides[2]**2)
-    return(x)
+        return "Your triangle is scalene."
 
-print(check(a,b,c))
-print(f"{'Votre triangle est rectangle.' if rec(a,b,c) else ''}")
+def is_rectangle(sides):
+    a, b, c = sides
+    return math.isclose(a**2 + b**2, c**2)
+
+def main():
+    sides = get_triangle_sides()
+    print(check_triangle(sides))
+    print(f"Your triangle is rectangle." if is_rectangle(sides) else "")
+
+if __name__ == "__main__":
+    main()
