@@ -8,7 +8,6 @@ def lire(fichier):
     file = open(fichier,'rt')
     texte = file.read()
     print(texte)
-    a = input()
     file.close()
 
 def modif(fichier):
